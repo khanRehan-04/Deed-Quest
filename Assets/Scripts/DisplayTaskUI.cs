@@ -1,10 +1,10 @@
 using UnityEngine;
-using TMPro;
 
 public class DisplayTaskUI : MonoBehaviour
 {
-    public TMP_Text taskText;
     public TaskManager taskManager;
+    public GameObject taskUIPrefab;
+    public Transform contentPanel;
 
     void Start()
     {
@@ -13,13 +13,11 @@ public class DisplayTaskUI : MonoBehaviour
 
     void DisplayTasks()
     {
-        string taskInfo = "";
-
         foreach (Task task in taskManager.tasks)
         {
-            taskInfo += "Task: " + task.name + "\nDescription: " + task.description + "\n\n";
+            GameObject taskObject = Instantiate(taskUIPrefab, contentPanel);
+            TaskUI taskUI = taskObject.GetComponent<TaskUI>();
+            taskUI.Setup(task, taskManager);
         }
-
-        taskText.text = taskInfo;
     }
 }

@@ -10,4 +10,9 @@ public class TaskManager : MonoBehaviour
         Task newTask = new Task(name, description);
         tasks.Add(newTask);
     }
+
+    public void UpdateTaskCompletionStatus(Task task)
+    {
+        Debug.Log("Task completion status updated: " + task.name + " - Completed: " + task.isCompleted);
+    }
 }
