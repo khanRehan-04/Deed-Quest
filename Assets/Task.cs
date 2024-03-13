@@ -1,15 +1,21 @@
-[System.Serializable]
-public class Task
+namespace UserData
 {
-    public string name;
-    public string description;
-    public bool isCompleted;
-
-    // Constructor
-    public Task(string name, string description)
+    [System.Serializable]
+    public class Task
     {
-        this.name = name;
-        this.description = description;
-        this.isCompleted = false;
+        public string name;
+        public string description;
+        public bool isCompleted;
+
+        // Constructor
+        public Task(string name, string description)
+        {
+            this.name = name;
+            this.description = description;
+            this.isCompleted = false;
+        }
     }
 }
+
+
+

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UserData;
 
 public class DisplayTaskUI : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class DisplayTaskUI : MonoBehaviour
     {
         DisplayTasks();
     }
+
+    //private void Update()
+    //{
+    //    DisplayTasks();
+    //}
 
     void DisplayTasks()
     {
